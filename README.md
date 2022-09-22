@@ -4,6 +4,7 @@
 
 
 | # | Title                 | Difficulty |   Solutions |
+| ----- | ----- | ----- | ----- |
 | 1 |           Two Sum     | Easy     | xx |
 | 1480 |   一维数组的动态和   | Easy    | xx |
 
