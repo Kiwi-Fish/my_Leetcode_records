@@ -1,3 +1,4 @@
+## Problem 
 Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]).
 
 Return the running sum of nums.
@@ -22,14 +23,11 @@ Input: nums = [3,1,2,10,1]
 Output: [3,4,6,16,17]
 ```
  
-Constraints:
+**Constraints:**  
+* 1 <= nums.length <= 1000
+* -10^6 <= nums[i] <= 10^6
 
-+ 1 <= nums.length <= 1000
-
-- -10^6 <= nums[i] <= 10^6
-
-
-* Solution:
+## Solution:
 
 ```python
 class Solution:
@@ -43,12 +41,13 @@ class Solution:
 执行用时：52 ms, 在所有 Python3 提交中击败了26.10%的用户
 内存消耗：15.1 MB, 在所有 Python3 提交中击败了38.60%的用户
 
+`
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
         for i in range(1,len(nums)):
             nums[i] = nums[i] + nums[i-1]
         return nums
-
+`
 Runtime: 76 ms, faster than 35.19% of Python3 online submissions for Running Sum of 1d Array.
 Memory Usage: 13.8 MB, less than 99.95% of Python3 online submissions for Running Sum of 1d Array.
   
@@ -56,3 +55,8 @@ Memory Usage: 13.8 MB, less than 99.95% of Python3 online submissions for Runnin
 1. 数组添加元素 List.append()
 2. 可以用题目给定的变量，节省内存消耗
       
+>1  
+>>2
+>>3ss  
+>>3
+>>>3  
