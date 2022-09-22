@@ -24,14 +24,14 @@ Output: [3,4,6,16,17]
  
 Constraints:
 
-1 <= nums.length <= 1000
+·1 <= nums.length <= 1000
 
--10^6 <= nums[i] <= 10^6
+·-10^6 <= nums[i] <= 10^6
 
 
 Solution:
 
-
+···python
 class Solution:
     def runningSum(self, nums: List[int]) -> List[int]:
         result = []
@@ -39,7 +39,7 @@ class Solution:
         for i in range((len(nums)-1)):
             result.append(result[i] + nums[i+1])
         return result
-      
+···  
 执行用时：52 ms, 在所有 Python3 提交中击败了26.10%的用户
 内存消耗：15.1 MB, 在所有 Python3 提交中击败了38.60%的用户
 
