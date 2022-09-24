@@ -1,7 +1,7 @@
 ## 知识积累
 
 **1. leetcode上次提交时间记录是20190510，现在已经是20220922了**  
-**2. **
+**2. 一些Brute Force可解的方法不到万不得已不要用，时间复杂度O(n2)，会出现Time Limit Exceeded**
 
 
 ## Problem:
@@ -41,9 +41,14 @@ Output: [0,1]
 
 **Follow-up:** Can you come up with an algorithm that is less than O(n2) time complexity?
 
-## Solution:
-**Wrong Answer**  
+## Solution: Brute Force
+**2. 一些Brute Force可解的方法不到万不得已不要用，时间复杂度O(n2)，会出现Time Limit Exceeded**   
+The brute force approach is simple. Loop through each element x and find if there is another value that equals to target-X   
+Complexity Analysis
+* Time complexity : O(n^2)，每一轮循环的时间复杂度是O(n)，故总的时间复杂度是O(n^2)
+* Space complexity : O(1)
 
+**Wrong Answer**  
 首先尝试On方的解法正不正确，没注意两个坐标不重复
 ```python
 class Solution:
@@ -59,9 +64,8 @@ Output: [0,0]
 Expected: [1,2]
 ```
 
-**Time Limit Exceeded**
-
-修改上述bug后，On方超出时间
+**Time Limit Exceeded**  
+修改上述bug后，O(n2)超出时间
 ```python
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
@@ -73,6 +77,19 @@ class Solution:
 ```
 Last executed input: [1,2,3,4,5,...] 19999
 ```
+但是换另一种写法就不超出时间
+```python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums)):
+            for j in range(len(nums)-i-1):
+                if nums[i] + nums[j+i+1] == target:
+                    return [i,j+i+1]
+```  
+Runtime: 8834 ms, faster than 5.00% of Python3 online submissions for Two Sum.
+Memory Usage: 15 MB, less than 76.98% of Python3 online submissions for Two Sum.
+
+
 
 **2.  **
 
